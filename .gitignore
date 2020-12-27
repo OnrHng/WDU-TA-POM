@@ -61,3 +61,4 @@ local.properties
 *.iml
 .idea
 target
+/debug.log
