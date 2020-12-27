@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Basic Test Suite">
+<suite name="Basic Test Suite" >
     <test name="Basic Test Group">
-        <classes>
-            <class name="org.cb.ta.BasicTest"></class>
-        </classes>
+        <packages>
+            <package name="org.cb.ta"></package>
+        </packages>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
