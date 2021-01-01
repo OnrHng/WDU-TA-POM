@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -29,15 +31,16 @@ public class WDUDataTablesButtonStatesPageTest extends BaseTest {
     @Test
     public void testTable1() throws IOException {
         List<WebElement> rows = wduDataTablesButtonStatesPage.getTable1Rows();
-        String[] dataToWrite = new String[4];
-
+//        String[] dataToWrite = new String[4];
+        List<String[]> dataList = new ArrayList<>();
         for (WebElement row : rows) {
             String[] splittedRow = row.getText().split(" ");
 //            ["Firstname", "Lastname", "Age"]
-            writeDataToExcel.writeExcel("src/test/java/org/cb/ta/resources/", "test01.xls", "Sayfa1", splittedRow );
-
-            System.out.println(row.getText());
+            dataList.add(splittedRow);
+//            System.out.println(row.getText());
         }
+        // [["Firstname", "Lastname", "Age"],["John", "Smith", "45"],["Jemma", "Jackson", "94"],["Michael", "Doe", "20"]]
+        writeDataToExcel.writeExcel("src/test/java/org/cb/ta/resources/", "test01.xls", "Sayfa1", dataList );
 
         /*
         * Firstname lastname Age
