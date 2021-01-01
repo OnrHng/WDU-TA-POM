@@ -6,7 +6,8 @@
 <!--            <package name="org.cb.ta"></package>-->
 <!--        </packages>-->
         <classes>
-            <class name="org.cb.ta.WDUDataTablesButtonStatesPageTest"></class>
+<!--            <class name="org.cb.ta.WDUDataTablesButtonStatesPageTest"></class>-->
+            <class name="org.cb.ta.DropDownCheckBoxRadioBtnsPageTest"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

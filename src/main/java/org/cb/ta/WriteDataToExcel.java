@@ -46,32 +46,33 @@ public class WriteDataToExcel {
     Sheet sheet = guru99Workbook.getSheet(sheetName);
 
     //Get the current count of rows in excel file
-    int lastRowNum = sheet.getLastRowNum();
+//    int lastRowNum = sheet.getLastRowNum(); // -1
     //System.out.println("first row" + sheet.getFirstRowNum() + " context " + sheet.getRow(0).getCell(0).getStringCellValue());
-    System.out.println("ROW count : " + lastRowNum);
+//    System.out.println("ROW count : " + lastRowNum);
 
     //Get the first row from the sheet
-//    Row row = sheet.getRow(0);
+    int lastRowNum = 0;
+    Row newRow = sheet.createRow(0);
 
     //Create a new row and append it at last of sheet
-    Row newRow;
-    if (lastRowNum == -1){ // if file is empty
-      newRow = sheet.createRow(0);
-      lastRowNum = 0;
-    }else {
-      lastRowNum += 1;
-      newRow = sheet.createRow(lastRowNum);
-    }
+//    Row newRow;
+//    if (lastRowNum == -1){ // if file is empty
+//      newRow = sheet.createRow(0);
+//      lastRowNum = 0;
+//    }else {
+//      lastRowNum += 1;
+//      newRow = sheet.createRow(lastRowNum);
+//    }
     //Create a loop over the cell of newly created Row  data ->
     // [["Firstname", "Lastname", "Age"],["John", "Smith", "45"],["Jemma", "Jackson", "94"],["Michael", "Doe", "20"]]
     int i;
-    for (i = 0; i < dataToWrite.size(); i++) {
-      for (int j = 0; j < dataToWrite.get(i).length; j++) {
+    for (i = 0; i < dataToWrite.size(); i++) { // loop for rows
+      for (int j = 0; j < dataToWrite.get(i).length; j++) { // loop for columns
         //Fill data in row
         Cell cell = newRow.createCell(j);
         cell.setCellValue(dataToWrite.get(i)[j]);
       }
-      lastRowNum += 1;
+      lastRowNum += 1; // 4
       newRow = sheet.createRow(lastRowNum);
     }
 

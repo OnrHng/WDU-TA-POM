@@ -39,6 +39,7 @@ public class WDUDataTablesButtonStatesPageTest extends BaseTest {
             dataList.add(splittedRow);
 //            System.out.println(row.getText());
         }
+
         // [["Firstname", "Lastname", "Age"],["John", "Smith", "45"],["Jemma", "Jackson", "94"],["Michael", "Doe", "20"]]
         writeDataToExcel.writeExcel("src/test/java/org/cb/ta/resources/", "test01.xls", "Sayfa1", dataList );
 
@@ -46,6 +47,16 @@ public class WDUDataTablesButtonStatesPageTest extends BaseTest {
         * Firstname lastname Age
         * sally     abc       20
         * john      xyz       30
+        *
+        * websitesinden cekilen veriler ile text boxlara yazilip table olmasini bekledigimiz verileri karsilastiralim
+        * bunun icin
+        * 1- textboxlara input gir
+        * 2- submitlemeye calis
+        * 3- tekrar veri cek
+        * 4- son satirlari karsilastir ve
+        * 5- mesaj don.
+        *
+        *
         * */
 
        // writeDataToExcel.writeExcel("src/test/java/org/cb/ta/resources/", "test01.xls", "Table01",  );
